@@ -5,23 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome</title>
+    <title>Rooms</title>
 </head>
 <body>
-    <h1>Meeting Planner Application</h1>
-    <p>
-        This app will help you to manage your
-        <b>Meeting Planner</b> in the simple way.
-    </p>
-
-    <h2>Meetings</h2>
+    <h2>Rooms</h2>
     <ul>
-        {% for meeting in meetings %}
+        {% for room in rooms %}
             <li>
-                <a href="/meetings/{{meeting.id}}">{{meeting.title}}</a>
+                {{room}}
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'rooms' %}">Rooms list</a>
 </body>
 </html>
