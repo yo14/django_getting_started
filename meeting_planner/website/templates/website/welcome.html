@@ -13,9 +13,14 @@
         This app will help you to manage your
         <b>Meeting Planner</b> in the simple way.
     </p>
-    <p>
-        There are currently {{ num_meetings }} meetings
-        in the database.
-    </p>
+
+    <h2>Meetings</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="/meetings/{{meeting.id}}">{{meeting.title}}</a>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
