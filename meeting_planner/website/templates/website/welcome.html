@@ -1,23 +1,14 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'website/style.css' %}">
-    <title>Welcome</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Welcome {% endblock %}
+
+{% block content %}
     <h1>Meeting Planner Application</h1>
     <p>
         This app will help you to manage your
         <b>Meeting Planner</b> in the simple way.
     </p>
 
-    <img src="{% static 'website/calendar.png' %}" alt="calendar.png" width="100px">
-    
     <h2>Meetings</h2>
     <ul>
         {% for meeting in meetings %}
@@ -27,5 +18,4 @@
         {% endfor %}
     </ul>
     <a href="{% url 'rooms' %}">Rooms list</a>
-</body>
-</html>
+{% endblock %}
