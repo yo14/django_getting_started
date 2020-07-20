@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.forms import modelform_factory
+
 from meetings.models import Meeting, Room
+from meetings.forms import MeetingForm
+
+
 
 def detail(request, id):
     meeting = get_object_or_404(Meeting, pk=id)
@@ -10,7 +13,6 @@ def detail(request, id):
 def rooms_list(request):
     return render(request, "meetings/rooms_list.html", {"rooms": Room.objects.all()})
 
-MeetingForm = modelform_factory(Meeting, exclude=[])
 
 def new(request):
     if request.method == "POST":
